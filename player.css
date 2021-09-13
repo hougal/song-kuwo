@@ -1,0 +1,181 @@
+*{
+	padding: 0;
+	margin: 0;
+	color: #d1d1d1;
+}
+body{
+	background-color: black;
+	padding:0 50px;
+	height: 100vh;
+	user-select: none;
+}
+.iconfont{
+	font-size: 25px;
+}
+/* 头部 */
+#head{
+	padding-top: 40px;
+	padding-bottom: 10px;
+}
+#search{
+	background-color: transparent;
+	outline: none;
+	border: 1px solid #3f3f40;
+	height: 35px;
+	width: 200px;
+	padding: 0 5px;
+	margin-right: 50px;
+}
+/* .btn{
+	border: 1px solid #3f3f40;
+	padding: 5px 20px;
+	cursor: pointer;
+} */
+.btn:hover,
+#search:focus{
+	border: 1px solid white;
+	border-radius: 3px;
+}
+/* 中间 */
+#main{
+	height: 80%;
+	width: 100%;
+}
+.list{
+	height: 95%;
+	width: 75%;
+	overflow-y: auto;
+}
+table{
+	margin: 0 20px;
+	width: 98%;
+}
+tr{
+	line-height: 40px;
+}
+/* 歌名列 */
+.list-name{
+	width: 50%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+}
+.list-name-menu{
+	visibility: hidden;
+	cursor: pointer;
+	position: absolute;
+	top: -1px;
+	right: 10px;
+}
+.list-name:hover >.list-name-menu{
+	visibility: initial;
+}
+.list-author{
+	width: 15%;
+}
+.list-time{
+	width: 10%;
+}
+/* 中间右侧歌词区 */
+.song{
+	float: right;
+	height: 95%;
+	width: 25%;
+}
+.song-detail-img{
+	display: block;
+	width: 55%;
+	height: 35%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	text-align: center;
+}
+/* 歌词区 */
+#lyric{
+	height: 65%;
+	font-size: 14px;
+	text-align: center;
+	overflow-y: auto;
+}
+#lyric >p{
+	margin: 5px 0;
+}
+.lyric-active{
+	color: tomato;
+	font-size: 16px;
+}
+/* 下方播放区 */
+#footer{
+	width: 100%;
+	padding-top: 15px;
+	position: relative;
+}
+.footer-song-bf{
+	cursor: pointer;
+}
+.footer-song-detail{
+	position: absolute;
+	left: 110px;
+	top: 3px;
+	font-size: 18px;
+}
+.footer-song-author{
+	font-size: 13px;
+}
+.footer-song-time{
+	position: absolute;
+	left: 1000px;
+	top: 3px;
+}
+/* 进度条 */
+.progess-box{
+	position: relative;
+	display: inline-block;
+	width: 1000px;
+	height: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #5E606C;
+	cursor: pointer;
+}
+.progess{
+	position: absolute;
+	width: 10px;
+	height: 100%;
+	background-color: white;
+}
+.progess-point{
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	background-color: tomato;
+	top: -5px;
+	left: 10px;
+}
+/* 音量条 */
+.sound-box{
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 4px;
+	margin-left: 3px;
+	margin-bottom: 8px;
+	background-color: #5E606C;
+	cursor: pointer;
+}
+.sound{
+	width: 10px;
+	height: 100%;
+	position: absolute;
+	background-color: white;
+}
+.sound-point{
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	border-radius: 15px;
+	background-color: tomato;
+	top: -5px;
+	left: 0px;
+}

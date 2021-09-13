@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./iconfont/iconfont.css">
+	<link rel="stylesheet" href="./player.css">
+	<title>音乐下载</title>
+</head>
+
+<body>
+	<div id="head">
+		<input type="text" id="search" placeholder="输入要搜索的歌名" />
+	</div>
+	<div id="main">
+		<div class="song">
+			<img src="#" alt="歌曲图片" class="song-detail-img">
+			<div id="lyric">
+				<p></p>
+			</div>
+		</div>
+		<div class="list">&nbsp;
+			<table>
+				<thead>
+					<tr>
+						<td class="list-name">歌名</td>
+						<td class="list-author">歌手名</td>
+						<td class="list-time">时长</td>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="footer">
+		<audio src='https://sy-sycdn.kuwo.cn/56ee57da2dd0536849ba120bf6e8249a/613ef4bc/resource/n2/70/55/756351052.mp3'></audio>
+		<!-- 三个控制按钮 -->
+		<a>
+			<span class="iconfont icon-shangyishou" style="visibility: hidden;"></span>
+		</a>
+		<a>
+			<span class="iconfont icon-bofang footer-song-bf"></span>
+		</a>
+		<a>
+			<span class="iconfont icon-xiayishou" style="visibility: hidden;"></span>
+		</a>
+		<!-- 进度条 -->
+		<span class="footer-song-detail">
+			<span class="footer-song-name">晴天</span>
+			<span class="footer-song-author">周杰伦</span>
+		</span>
+		<span class="footer-song-time">
+			<span class="dtime">00:00</span> /
+			<span class="ztime">4:29</span>
+		</span>
+		<div class="progess-box">
+			<div class="progess"></div>
+			<div class="progess-point"></div>
+		</div>
+		<!-- 音量条 -->
+		<a>
+			<span class="iconfont icon-yinliang"></span>
+		</a>
+		<div class="sound-box">
+			<div class="sound"></div>
+			<div class="sound-point"></div>
+		</div>
+	</div>
+</body>
+<script src="./player.js"></script>
+
+</html>
