@@ -45,6 +45,7 @@ body{
 	height: 95%;
 	width: 75%;
 	overflow-y: auto;
+	overflow-x: hidden;
 }
 table{
 	margin: 0 20px;
@@ -55,7 +56,7 @@ tr{
 }
 /* 歌名列 */
 .list-name{
-	width: 50%;
+	width: 35%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	position: relative;

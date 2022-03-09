@@ -171,5 +171,16 @@ search.onkeydown = function () {
 	if (event.keyCode != 13) return
 	httpget(`http://127.0.0.1:7002/kuwo/search/searchMusicBykeyWord?key=${search.value}`).then(respon => {
 		song.songlist = respon.data.list
+		listToEnd = 1
 	})
 }
+var list = document.getElementsByClassName('list')[0]
+var listToEnd = 0+1
+list.addEventListener('scroll',()=>{
+	if(list.scrollHeight - list.scrollTop == list.clientHeight){
+		httpget(`http://127.0.0.1:7002/kuwo/search/searchMusicBykeyWord?key=${search.value}&pn=${++listToEnd}`).then(respon => {
+			song.songlist = respon.data.list
+			list.scrollTop = 0
+		})
+	}
+})
