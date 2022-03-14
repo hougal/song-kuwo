@@ -109,9 +109,9 @@ doc.onclick = function () {
 	var singer = event.target.parentElement.parentElement.parentElement.children[1].innerHTML
 	var time = event.target.parentElement.parentElement.parentElement.children[2].innerHTML
 	if (event.target.classList[1] == 'icon-bofang') {
-		httpget(`http://127.0.0.1:7002/kuwo/url?rid=${rid}`).then(respon => {
+		httpget(`http://127.0.0.1:7002/kuwo/url?mid=${rid}&type=music`).then(respon => {
 			// 请求到song url后修改播放链接, footer相关样式
-			music.src = respon.url
+			music.src = respon.data.url
 			// 修改底部
 			// 修改播放按钮样式
 			bf.playing = 0
@@ -127,6 +127,7 @@ doc.onclick = function () {
 			// 修改右侧图片,歌词
 			document.getElementsByClassName('song-detail-img')[0].src = pic
 		})
+		document.getElementById('lyric').innerHTML = ''
 		httpget(`http://127.0.0.1:7002/kuwo/lrc?musicId=${rid}`).then(respon =>{
 			lyric = respon.data.lrclist
 			for(let i=0; i<lyric.length; i++){
@@ -137,8 +138,8 @@ doc.onclick = function () {
 
 		})
 	}else{
-		httpget(`http://127.0.0.1:7002/kuwo/url?rid=${rid}`).then(respon => {
-			window.open(respon.url)
+		httpget(`http://127.0.0.1:7002/kuwo/url?mid=${rid}&music`).then(respon => {
+			window.open(respon.data.url)
 		})
 	}
 }
@@ -174,6 +175,7 @@ search.onkeydown = function () {
 		listToEnd = 1
 	})
 }
+//获取下一页歌曲内容
 var list = document.getElementsByClassName('list')[0]
 var listToEnd = 0+1
 list.addEventListener('scroll',()=>{
